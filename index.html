@@ -1,19 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div  class="bg-red-300">
-      <my-element>
-        <h1 class=" text-yellow-600">Vite + Lit</h1>
-      </my-element>
-      <h1 class="text-4xl text-red-700">Hello</h1>
-    </div>
 
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
+
+<body class="">
+  <wd-header>
+    <div class="flex-1">Logo</div>
+    <wd-menu>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </wd-menu>
+  </wd-header>
+  <wd-footer>
+  </wd-footer>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

@@ -1,1 +1,7 @@
-@import './tailwind/tailwindlib.css';
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+:root {
+    --container-padding: 5vw;
+}

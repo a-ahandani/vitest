@@ -3,14 +3,16 @@ import { customElement, property } from 'lit/decorators.js'
 import { withStyles } from '../../lib/decorators'
 import { createStyleSheet } from '../../lib/jss';
 import { classMap } from 'lit/directives/class-map.js';
+import icon from '@tabler/icons/2fa.svg'
 
 const styles = {
   root: {
   },
   menuButton: {
-    zIndex: 10,
-    position: 'relative',
+    // background: 'none',
+    // position: 'relative',
     display: 'flex',
+    zIndex: 'var(--layer-2)',
   },
   menuList: {
     position: 'absolute',
@@ -89,12 +91,12 @@ export class Menu extends LitElement {
   }
 
   render() {
+
     return html`
       <div class="${classMap({ [classes.menuActive]: this.active })}">
-            <button class="${classes.menuButton}" @click=${this.handleClick()}>
-              <svg width="34px" height="34px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L4 7" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"></path> <path d="M20 12L4 12" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"></path> <path d="M20 17L4 17" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"></path> </g></svg>        
-            </button>
-      
+            <wd-button class="${classes.menuButton}" @click=${this.handleClick()}> 
+                <wd-icon icon="${icon}" thickness="3" ></wd-icon>
+            </wd-button>
             <div class="${classes.menuList}">
               <div class="${classes.menuBg}"></div>
               <div>

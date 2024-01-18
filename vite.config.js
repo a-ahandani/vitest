@@ -1,3 +1,5 @@
+import svg from 'vite-plugin-svgo'
+
 // vite.config.js
 import { fileURLToPath, URL } from 'node:url'
 
@@ -9,5 +11,6 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },  
+  plugins: [svg()]
 })

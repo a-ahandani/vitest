@@ -1,11 +1,10 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { withStyles } from '../../lib/decorators'
-import { createStyleSheet } from '../../lib/jss';
+import { useStyles } from '../../lib/helpers/jss';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 
 
-const styles = {
+const styles = ({ thickness }: { thickness: number }) => ({
   '@global :host': {
     display: 'flex',
     alignItems: 'center',
@@ -13,15 +12,12 @@ const styles = {
   },
   icon: {
     '& svg': {
-      strokeWidth: 'var(--size-1)',
+      strokeWidth: thickness,
     }
   }
-};
+});
 
-const styleSheet = createStyleSheet(styles);
-const classes = styleSheet.classes;
 @customElement('wd-icon')
-@withStyles(styleSheet)
 export class Icon extends LitElement {
 
   @property({ type: String })
@@ -34,7 +30,11 @@ export class Icon extends LitElement {
   color = 'currentColor';
 
   render() {
+    const { style, classes } = useStyles(styles({ thickness: this.thickness }))
     return html`
+      <style>
+         ${style}
+      </style>
       <i class="${classes.icon}">
         ${unsafeSVG(this.icon)}
       </i>`

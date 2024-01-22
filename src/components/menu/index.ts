@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { withStyles } from '../../lib/decorators'
-import { createStyleSheet } from '../../lib/jss';
+import { createStyleSheet } from '../../lib/helpers/jss';
 import { classMap } from 'lit/directives/class-map.js';
 import icon from '@tabler/icons/2fa.svg'
 

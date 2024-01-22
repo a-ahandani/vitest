@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { withStyles } from '../../lib/decorators'
-import { createStyleSheet } from '../../lib/jss';
+import { createStyleSheet } from '../../lib/helpers/jss';
 
 const styles = {
   root: {

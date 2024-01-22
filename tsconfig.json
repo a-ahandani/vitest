@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES5",
     "useDefineForClassFields": false,
     "experimentalDecorators": true,
     "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES5", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -18,7 +18,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
   },
-  "include": ["src", "vite.config.js"]
-  }
+  "include": ["src", "vite.config.js"],
+}

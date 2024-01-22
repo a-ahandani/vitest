@@ -1,19 +1,28 @@
-{  
-    "root": true,
-    "plugins": ["@typescript-eslint","eslint-plugin-lit", "eslint-plugin-wc","eslint-plugin-lit-a11y"],
-    "extends": [
-        "eslint:recommended", 
-        "plugin:@typescript-eslint/recommended",
-        "plugin:wc/recommended",
-        "plugin:lit/recommended"
-    ],
-    "rules": {
-        "lit/no-legacy-template-syntax": "error",
-        "lit/no-template-arrow": "warn"      
-    },
-    "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module",
-        "project": "./tsconfig.json"
-    }
+{
+  "root": true,
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-lit",
+    "eslint-plugin-wc",
+    "eslint-plugin-lit-a11y"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:wc/recommended",
+    "plugin:lit/recommended",
+    "plugin:lit-a11y/recommended"
+  ],
+  "rules": {
+    "lit/no-legacy-template-syntax": "error",
+    "lit/no-template-arrow": "warn"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "litHtmlSources": true
+  }
 }

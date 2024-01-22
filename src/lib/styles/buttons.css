@@ -1,42 +1,43 @@
 :root {
-    --button-padding: 5px 10px;
-    --button-font-size-small: 12px;
-    --button-font-size-medium: 14px;
-    --button-font-size-large: 16px;
-    --button-border-color: #3498db;
-    --button-text-color: #3498db;
-    --button-background-color: #ffffff;
-    --button-hover-background-color: #3498db;
-    --button-hover-text-color: #ffffff;
-  }
-  
-  button {
-    display: inline-block;
-    padding: var(--button-padding);
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid var(--button-border-color);
-    border-radius: 5px;
-    color: var(--button-text-color);
-    background-color: var(--button-background-color);
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .button-small {
-    font-size: var(--button-font-size-small);
-  }
-  
-  .button-medium {
-    font-size: var(--button-font-size-medium);
-  }
-  
-  .button-large {
-    font-size: var(--button-font-size-large);
-  }
-  
-  .button:hover {
-    background-color: var(--button-hover-background-color);
-    color: var(--button-hover-text-color);
-  }
-  
+  --button-padding: 5px 10px;
+  --button-font-size-small: 12px;
+  --button-font-size-medium: 14px;
+  --button-font-size-large: 16px;
+  --button-border-color: #3498db;
+  --button-text-color: #3498db;
+  --button-background-color: #ffffff;
+  --button-hover-background-color: #3498db;
+  --button-hover-text-color: #ffffff;
+}
+
+button {
+  display: inline-block;
+  padding: var(--button-padding);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--button-border-color);
+  border-radius: 5px;
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.button-small {
+  font-size: var(--button-font-size-small);
+}
+
+.button-medium {
+  font-size: var(--button-font-size-medium);
+}
+
+.button-large {
+  font-size: var(--button-font-size-large);
+}
+
+.button:hover {
+  background-color: var(--button-hover-background-color);
+  color: var(--button-hover-text-color);
+}

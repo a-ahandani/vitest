@@ -1,3 +1,13 @@
 {
-    "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "prettier.insertPragma": true,
+  "prettier.requireConfig": true,
+  "prettier.requirePragma": true,
+  "eslint.format.enable": false,
+  "notebook.formatOnSave.enabled": true,
+  "editor.defaultFoldingRangeProvider": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": null,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

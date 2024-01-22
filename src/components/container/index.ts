@@ -1,26 +1,23 @@
-import { LitElement, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
-import { withStyles } from '../../lib/decorators'
-import { createStyleSheet } from '../../lib/helpers/jss';
+import { LitElement, html } from "lit";
+import { customElement } from "lit/decorators.js";
+import { withStyles } from "../../lib/decorators";
+import { createStyleSheet } from "../../lib/helpers/jss";
 
 const styles = {
-  root: {
-  },
+  root: {},
   container: {
     display: "block",
     position: "relative",
-    fontFamily: 'var(--font-serif)',
-    height: '100vh',
-    overflow: 'hidden',
+    fontFamily: "var(--font-serif)",
+    height: "100vh",
+    overflow: "hidden",
   },
-  '@global': {
-
-  }
+  "@global": {},
 };
 
 const styleSheet = createStyleSheet(styles);
 const classes = styleSheet.classes;
-@customElement('wd-container')
+@customElement("wd-container")
 @withStyles(styleSheet)
 export class Container extends LitElement {
   render() {
@@ -28,13 +25,12 @@ export class Container extends LitElement {
       <div class=${classes.container}>
         <slot></slot>
       </div>
-      `
+    `;
   }
 }
 
-
 declare global {
   interface HTMLElementTagNameMap {
-    'wd-container': Container
+    "wd-container": Container;
   }
 }

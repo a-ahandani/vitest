@@ -1,12 +1,10 @@
-@import url('./lib/styles/buttons.css');
+@import url("./lib/styles/buttons.css");
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
 
 :root {
-    --container-padding: 5vw;
+  --container-padding: 5vw;
 }
 body {
-    
 }
-

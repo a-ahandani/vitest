@@ -11,6 +11,7 @@ const styles = ({ thickness }: { thickness: number }) => ({
   },
   icon: {
     "& svg": {
+      display: "flex",
       strokeWidth: thickness,
     },
   },
@@ -22,17 +23,14 @@ export class Icon extends LitElement {
   icon = "";
   @property({ type: Number })
   size = 24;
-  @property({ type: Number })
+  @property({ type: Number, reflect: true })
   thickness = 1;
   @property({ type: String })
   color = "currentColor";
 
   render() {
     const { style, classes } = useStyles(styles({ thickness: this.thickness }));
-    return html` <style>
-        ${style}
-      </style>
-
+    return html`${style}
       <i class="${classes.icon}"> ${unsafeSVG(this.icon)} </i>`;
   }
 }

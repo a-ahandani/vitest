@@ -7,8 +7,11 @@ const styles = {
   root: {},
   container: {
     display: "flex",
+    position: "relative",
     padding: "var(--size-4)",
   },
+  menu: {},
+  logo: { flex: 1 },
 };
 
 const styleSheet = createStyleSheet(styles);
@@ -19,7 +22,12 @@ export class Header extends LitElement {
   render() {
     return html`
       <div class=${classes.container}>
-        <slot></slot>
+        <div class=${classes.logo}>
+          <slot name="logo"></slot>
+        </div>
+        <div class=${classes.menu}>
+          <slot name="menu"></slot>
+        </div>
       </div>
     `;
   }

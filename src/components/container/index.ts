@@ -4,15 +4,9 @@ import { withStyles } from "../../lib/decorators";
 import { createStyleSheet } from "../../lib/helpers/jss";
 
 const styles = {
-  root: {},
   container: {
-    display: "block",
-    position: "relative",
-    fontFamily: "var(--font-serif)",
-    height: "100vh",
-    overflow: "hidden",
+    padding: "var(--container-padding)",
   },
-  "@global": {},
 };
 
 const styleSheet = createStyleSheet(styles);

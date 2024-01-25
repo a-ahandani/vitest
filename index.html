@@ -1,27 +1,27 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
 
-  <body class="">
-    <i class="ti ti-brand-tabler"></i>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
 
-    <wd-container>
-      <wd-header>
-        <div class="flex-1">Logo</div>
-        <wd-menu>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-          </ul>
-        </wd-menu>
-      </wd-header>
-      <wd-footer> </wd-footer>
-    </wd-container>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<body>
+  <wd-container>
+    <wd-header>
+      <div slot="logo">Logo</div>
+      <wd-menu slot="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </wd-menu>
+    </wd-header>
+    <wd-footer> </wd-footer>
+  </wd-container>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

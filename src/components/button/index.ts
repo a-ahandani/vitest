@@ -1,20 +1,40 @@
 import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { withStyles } from "../../lib/decorators";
 import { createStyleSheet } from "../../lib/helpers/jss";
+import { classMap } from "lit/directives/class-map.js";
 
 const styles = {
+  "@global :host": {},
   root: {
-    display: "inline-block",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
     padding: "var(--button-padding)",
     textAlign: "center",
     textDecoration: "none",
     cursor: "pointer",
     border: "1px solid var(--button-border-color)",
-    borderRadius: 5,
+    borderRadius: "5px",
     color: "var(--button-text-color)",
-    backgroundColor: "transparent",
+    backgroundColor: "var(--button-background-color)",
     transition: "background-color 0.3s, color 0.3s",
+    "&:hover": {
+      backgroundColor: "var(--button-hover-background-color)",
+      color: "var(--button-hover-text-color)",
+    },
+  },
+  small: {
+    fontSize: "var(--button-font-size-small)",
+  },
+  medium: {
+    fontSize: "var(--button-font-size-medium)",
+  },
+  large: {
+    fontSize: "var(--button-font-size-large)",
+  },
+  noBorder: {
+    border: "none",
   },
 };
 
@@ -23,9 +43,20 @@ const classes = styleSheet.classes;
 @customElement("wd-button")
 @withStyles(styleSheet)
 export class Button extends LitElement {
+  @property({ type: String })
+  size = "large";
+
+  @property({ type: Boolean })
+  noBorder = false;
+
   render() {
+    const variant = {
+      [classes.root]: true,
+      [classes[this.size]]: true,
+      [classes.noBorder]: this.noBorder,
+    };
     return html`
-      <button class=${classes.root}>
+      <button class=${classMap(variant)}>
         <slot></slot>
       </button>
     `;

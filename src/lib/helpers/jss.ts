@@ -1,5 +1,6 @@
 import jss, { Styles } from "jss";
 import preset from "jss-preset-default";
+import { TemplateResult, html } from "lit";
 
 const toKebabCase = (str: string) =>
   str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1_$2").toLowerCase();
@@ -19,9 +20,11 @@ export const createStyleSheet = (
 
 export const useStyles = (
   jss: Partial<Styles<string | number | symbol, undefined>>,
-): { style: string; classes: Record<string, string> } => {
+): { style: TemplateResult; classes: Record<string, string> } => {
   const styleSheet = createStyleSheet(jss);
   const classes = styleSheet.classes;
-  const style = styleSheet.toString();
+  const style = html`<style>
+    ${styleSheet.toString()}
+  </style>`;
   return { style, classes };
 };

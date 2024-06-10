@@ -1,16 +1,39 @@
 import svg from "vite-plugin-svgo";
-
-// vite.config.js
+import injectHTML from 'vite-plugin-html-inject';
 import { fileURLToPath, URL } from "node:url";
-
 import { defineConfig } from "vite";
 
-// https://vitejs.dev/config/
+export const pages = {
+  home: {
+    title: 'Home',
+    template: '/html/pages/home.html',
+  },
+  about: {
+    title: 'About',
+    template: '/html/pages/about.html',
+  },
+}
+
+
+
 export default defineConfig({
+  // root: 'html/pages',
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  plugins: [svg()],
+  build: {
+    rollupOptions: {
+      input: Object.keys(pages).reduce((acc, page) => {
+        acc[page] = new URL(pages[page].template, import.meta.url).pathname;
+        return acc;
+
+      }, {})
+    }
+  },
+  server: {
+    open: '/html/pages/home.html'
+  },
+  plugins: [svg(), injectHTML()],
 });

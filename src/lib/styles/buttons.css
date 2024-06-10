@@ -3,9 +3,7 @@
   --button-font-size-small: 12px;
   --button-font-size-medium: 14px;
   --button-font-size-large: 16px;
-  --button-border-color: #3498db;
-  --button-text-color: #3498db;
-  --button-background-color: #ffffff;
-  --button-hover-background-color: #3498db;
-  --button-hover-text-color: #ffffff;
+  --button-color: #000000;
+  --button-alternative-color: #f31919;
+  --button-border-radius: "5px";
 }

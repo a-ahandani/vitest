@@ -1,5 +1,6 @@
 import "pollen-css";
 import "./style.css";
+import "boxicons";
 import "./components/header";
 import "./components/menu";
 import "./components/footer";

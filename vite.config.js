@@ -16,25 +16,26 @@ export const pages = {
     title: 'About',
     template: '/html/pages/about.html',
   },
+  contact: {
+    title: 'Contact',
+    template: '/html/pages/about.html',
+  },
 }
 
 
 
 const generateHTMLFiles = () => {
   return {
-    name: 'generate-html-files',
+    name: 'generate-menu',
     async buildStart() {
       const navTemplate = prettier.format(`
-        <!-- Navigation -->
-        <wd-menu slot="menu">
           <ul>
             ${Object.keys(pages).map(page => `<li><a href="${pages[page].template}">${pages[page].title}</a></li>`).join('\n')}
           </ul>
-        </wd-menu>
       `, { parser: 'html' });
       const content = await navTemplate;
 
-      const menuFilePath = path.join(fileURLToPath(new URL('./html/partials/header/menu/index.html', import.meta.url)));
+      const menuFilePath = path.join(fileURLToPath(new URL('./html/partials/header/menu/generated-menu.html', import.meta.url)));
       await fs.writeFile(menuFilePath, content);
     }
   };

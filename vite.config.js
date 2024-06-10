@@ -2,6 +2,10 @@ import svg from "vite-plugin-svgo";
 import injectHTML from 'vite-plugin-html-inject';
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
+import { promises as fs } from 'fs';
+import { resolve } from 'path';
+import path from 'path';
+import prettier from 'prettier';
 
 export const pages = {
   home: {
@@ -14,6 +18,46 @@ export const pages = {
   },
 }
 
+
+
+const generateHTMLFiles = () => {
+  return {
+    name: 'generate-html-files',
+    async buildStart() {
+      const navTemplate = prettier.format(`
+        <!-- Navigation -->
+        <wd-menu slot="menu">
+          <ul>
+            ${Object.keys(pages).map(page => `<li><a href="${pages[page].template}">${pages[page].title}</a></li>`).join('\n')}
+          </ul>
+        </wd-menu>
+      `, { parser: 'html' });
+      const content = await navTemplate;
+
+      const menuFilePath = path.join(fileURLToPath(new URL('./html/partials/header/menu/index.html', import.meta.url)));
+      await fs.writeFile(menuFilePath, content);
+    }
+  };
+};
+
+const formatHTMLPlugin = () => {
+  return {
+    name: 'format-html',
+    async writeBundle() {
+      const pagesDir = resolve(fileURLToPath(new URL('./dist/html/pages', import.meta.url)));
+      const files = await fs.readdir(pagesDir);
+
+      for (const file of files) {
+        if (file.endsWith('.html')) {
+          const filePath = resolve(pagesDir, file);
+          let html = await fs.readFile(filePath, 'utf-8');
+          html = await prettier.format(html, { parser: 'html' });
+          await fs.writeFile(filePath, html);
+        }
+      }
+    },
+  };
+}
 
 
 export default defineConfig({
@@ -35,5 +79,5 @@ export default defineConfig({
   server: {
     open: '/html/pages/home.html'
   },
-  plugins: [svg(), injectHTML()],
+  plugins: [svg(), injectHTML(), generateHTMLFiles(), formatHTMLPlugin()],
 });

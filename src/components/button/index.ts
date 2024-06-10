@@ -14,14 +14,14 @@ const styles = {
     textAlign: "center",
     textDecoration: "none",
     cursor: "pointer",
-    border: "1px solid var(--button-border-color)",
-    borderRadius: "5px",
-    color: "var(--button-text-color)",
+    border: "1px solid var(--button-color)",
+    borderRadius: "var(--button-border-radius)",
+    color: "var(--button-color)",
     backgroundColor: "var(--button-background-color)",
     transition: "background-color 0.3s, color 0.3s",
     "&:hover": {
-      backgroundColor: "var(--button-hover-background-color)",
-      color: "var(--button-hover-text-color)",
+      backgroundColor: "var(--button-alternative-color)",
+      color: "var(--button-color)",
     },
   },
   small: {
@@ -38,13 +38,24 @@ const styles = {
   },
 };
 
+export interface ButtonProps {
+  /**
+   * Remove border
+   */
+  noBorder?: boolean;
+  /**
+   * How large should the button be?
+   */
+  size?: "small" | "medium" | "large";
+}
+
 const styleSheet = createStyleSheet(styles);
 const classes = styleSheet.classes;
 @customElement("wd-button")
 @withStyles(styleSheet)
-export class Button extends LitElement {
+export class Button extends LitElement implements ButtonProps {
   @property({ type: String })
-  size = "large";
+  size: "small" | "medium" | "large" = "large";
 
   @property({ type: Boolean })
   noBorder = false;

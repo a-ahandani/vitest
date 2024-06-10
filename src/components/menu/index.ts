@@ -2,7 +2,6 @@ import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { useStyles } from "../../lib/helpers/jss";
 import { classMap } from "lit/directives/class-map.js";
-import icon from "@tabler/icons/menu.svg";
 import { styles } from "./styles";
 
 @customElement("wd-menu")
@@ -18,6 +17,7 @@ export class Menu extends LitElement {
 
   render() {
     const { style, classes } = useStyles(styles());
+
     return html`${style}
       <div class="${classMap({ [classes.menuActive]: this.active })}">
         <wd-button
@@ -25,7 +25,7 @@ export class Menu extends LitElement {
           @click=${this.handleClick()}
           noBorder
         >
-          <wd-icon icon="${icon}"></wd-icon>
+          <wd-icon icon="${'icon'}"></wd-icon>
         </wd-button>
         <div class="${classes.menuList}">
           <div class="${classes.menuBg}"></div>

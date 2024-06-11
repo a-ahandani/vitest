@@ -1,7 +1,7 @@
 @import url("./lib/styles/buttons.css");
 
 :root {
-  --container-padding: 3rem;
+  --container-padding: 13rem;
 }
-body {
-}
+
+body {}

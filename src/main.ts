@@ -6,8 +6,10 @@ import "boxicons";
 import "pollen-css";
 import "./style.css";
 
+// Import pages
+import "./pages.css";
+
 // Import components
-import "./components/header";
 import "./components/menu";
 import "./components/footer";
 import "./components/container";

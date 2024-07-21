@@ -6,6 +6,7 @@ import { createStyleSheet } from "../../lib/helpers/jss";
 const styles = {
   container: {
     padding: "var(--container-padding)",
+    margin: "var(--container-margin)",
   },
 };
 

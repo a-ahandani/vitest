@@ -3,11 +3,7 @@ import "boxicons";
 
 
 // Import global styles
-import "pollen-css";
-import "./style.css";
-
-// Import pages
-import "./pages.css";
+import "./styles/index.css";
 
 // Import components
 import "./components/menu";

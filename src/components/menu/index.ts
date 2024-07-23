@@ -9,6 +9,7 @@ export class Menu extends LitElement {
   @property({ type: Boolean, reflect: true })
   active = false;
 
+
   handleClick() {
     return () => {
       this.active = !this.active;
@@ -17,24 +18,23 @@ export class Menu extends LitElement {
 
   render() {
     const { style, classes } = useStyles(styles());
-
     return html`${style}
       <div class="${classMap({ [classes.menuActive]: this.active })}">
-        <wd-button
+        <wd-hamburger
           class="${classes.menuButton}"
           @click=${this.handleClick()}
-          noBorder
         >
-          <wd-icon icon="${'icon'}"></wd-icon>
-        </wd-button>
+        </wd-hamburger>
         <div class="${classes.menuList}">
           <div class="${classes.menuBg}"></div>
-          <div>
+          <nav class="${classes.navigation}">
             <slot></slot>
-          </div>
+          </nav>
         </div>
+        
       </div> `;
   }
+
 }
 
 declare global {

@@ -26,5 +26,6 @@
     "src",
     "vite.config.js",
     "pollen.config.js",
+    "tsconfig.json",
   ],
 }

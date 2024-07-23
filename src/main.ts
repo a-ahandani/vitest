@@ -11,6 +11,7 @@ import "./components/footer";
 import "./components/container";
 import "./components/button";
 import "./components/icon";
+import "./components/hamburger";
 
 // page transitions
 import "./lib/transitions";

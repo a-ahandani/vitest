@@ -1,0 +1,44 @@
+.header {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    padding: calc(var(--scale-fluid-10)* 0.5) var(--scale-fluid-8);
+
+    .logo {
+        display: flex;
+        flex: 1;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 1000;
+
+        nav {
+            padding: var(--scale-fluid-10);
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                font-size: var(--scale-7);
+
+
+                li {
+
+                    a {
+
+                        font-family: --font-mono;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

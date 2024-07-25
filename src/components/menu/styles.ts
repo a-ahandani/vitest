@@ -1,6 +1,8 @@
 export const styles = () => ({
   "@global": {
     ":host": {
+      display: "flex",
+      alignItems: "center",
     },
   },
 
@@ -21,6 +23,7 @@ export const styles = () => ({
   },
   menuList: {
     position: "fixed",
+    zIndex: "var(--layer-1)",
     left: "0",
     top: "0",
     width: "100%",

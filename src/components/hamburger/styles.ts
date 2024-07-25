@@ -39,6 +39,7 @@ export const styles = () => ({
         },
         '& $active, input:checked + div': {
             '& span': {
+                backgroundColor: 'var(--color-white)',
                 '&:first-of-type': {
                     transform: 'rotate(45deg)',
                     top: 5,

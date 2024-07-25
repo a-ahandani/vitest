@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import { LitElement, PropertyValues, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { useStyles } from "../../lib/helpers/jss";
 import { classMap } from "lit/directives/class-map.js";
@@ -14,6 +14,16 @@ export class Menu extends LitElement {
     return () => {
       this.active = !this.active;
     };
+  }
+
+  updated(changedProperties: PropertyValues) {
+    if (changedProperties.has('active')) {
+      if (this.active) {
+        document.body.classList.add('menu-active');
+      } else {
+        document.body.classList.remove('menu-active');
+      }
+    }
   }
 
   render() {

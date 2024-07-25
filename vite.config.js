@@ -9,22 +9,24 @@ import generatePagesStyles from './vite-plugins/generate-pages-styles.ts';
 
 export const pages = {
   home: {
-    title: 'Home',
+    title: 'HOME',
     template: '/src/html/pages/home.html',
   },
+  projects: {
+    title: 'PROJECTS',
+    template: '/src/html/pages/about.html',
+  },
   about: {
-    title: 'About',
+    title: 'ABOUT',
     template: '/src/html/pages/about.html',
   },
   contact: {
-    title: 'Contact',
+    title: 'CONTACT',
     template: '/src/html/pages/about.html',
   },
 }
 
-
 export default defineConfig({
-  // root: 'html/pages',
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

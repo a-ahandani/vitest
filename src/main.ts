@@ -6,12 +6,7 @@ import "boxicons";
 import "./styles/index.css";
 
 // Import components
-import "./components/menu";
-import "./components/footer";
-import "./components/container";
-import "./components/button";
-import "./components/icon";
-import "./components/hamburger";
+import "./components";
 
 // page transitions
 import "./lib/transitions";

@@ -49,6 +49,11 @@ const generateColorPalettes = () => {
     return palettes;
 }
 
+function makeTypeset(scale, lh, type = "--font-sans") {
+    return `var(--scale-${scale})/${lh} var(${type})`;
+}
+
+
 
 export default defineConfig((pollen) => ({
     output: {
@@ -58,6 +63,24 @@ export default defineConfig((pollen) => ({
     modules: {
         scale: true,
         width: true,
+        font: {
+            ...pollen.font,
+            sans: `"Dosis", ${pollen.font.sans}`,
+            serif: `"DM Serif Display", ${pollen.font.serif}`
+        },
+        typeset: {
+            'sans-0': makeTypeset(0, 1.3),
+            'sans-1': makeTypeset(2, 1.5),
+            'sans-2': makeTypeset(4, 1.4),
+            'sans-3': makeTypeset(6, 1.2),
+            'sans-4': makeTypeset(8, 1.1),
+            'serif-0': makeTypeset(0, 1.3, "--font-serif"),
+            'serif-1': makeTypeset(2, 1.5, "--font-serif"),
+            'serif-2': makeTypeset(4, 1.4, "--font-serif"),
+            'serif-3': makeTypeset(6, 1.2, "--font-serif"),
+            'serif-4': makeTypeset(8, 1.1, "--font-serif")
+
+        },
         color: {
             ...pollen.color,
             ...generateColorPalettes()

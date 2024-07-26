@@ -4,4 +4,4 @@ export { Container } from "./container";
 export { Button } from "./button";
 export { Icon } from "./icon";
 export { Hamburger } from "./hamburger";
-// export { Noise } from "./noise";
+export { Noise } from "./noise";

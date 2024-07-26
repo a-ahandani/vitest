@@ -16,7 +16,7 @@
         display: flex;
         flex: 1;
         font: var(--typeset-serif-3);
-        z-index: var(--layer-1);
+        z-index: var(--layer-3);
     }
 
     .logo {
@@ -39,7 +39,7 @@
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                font: var(--typeset-sans-3);
+                font: var(--typeset-sans-4);
 
 
                 li {

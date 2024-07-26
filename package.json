@@ -21,6 +21,7 @@
     "@storybook/test": "^8.1.6",
     "@storybook/web-components": "^8.1.6",
     "@storybook/web-components-vite": "^8.1.6",
+    "@types/three": "^0.166.0",
     "@typescript-eslint/eslint-plugin": "^7.13.0",
     "@typescript-eslint/parser": "^7.13.0",
     "autoprefixer": "^10.4.19",
@@ -45,11 +46,13 @@
   },
   "dependencies": {
     "@barba/core": "^2.10.0",
-    "pollen-css": "^5.0.1",
-    "animejs": "^3.2.2",
+    "@mojs/core": "^1.7.1",
     "boxicons": "^2.1.4",
     "jss": "^10.10.0",
     "jss-preset-default": "^10.10.0",
-    "lit": "^3.1.4"
+    "lit": "^3.1.4",
+    "pollen-css": "^5.0.1",
+    "postprocessing": "^6.35.6",
+    "three": "^0.166.1"
   }
 }

@@ -1,5 +1,8 @@
-import anime from 'animejs/lib/anime.es.js';
 import barba from '@barba/core';
+import { Html, easing } from '@mojs/core';
+
+
+
 
 barba.init({
     schema: {
@@ -7,20 +10,27 @@ barba.init({
     transitions: [{
         name: 'default-transition',
         leave(data) {
-            return anime({
-                targets: data.current.container,
-                opacity: [1, 0],
-                duration: 1000,
-                easing: 'easeInOutQuad'
-            }).finished;
+            console.log('leave');
+            // // Leave animation
+            // const leaveAnimation = new Html({
+            //     el: data.current.container,
+            //     duration: 500,
+            //     easing: easing.bezier(0.1, 0.7, 0.1, 0.9),
+            //     opacity: { 1: 0 },
+            //     x: { 0: 100 },
+            // });
+            // return leaveAnimation.play();
         },
         enter(data) {
-            return anime({
-                targets: data.next.container,
-                opacity: [0, 1],
-                duration: 1000,
-                easing: 'easeInOutQuad'
-            }).finished;
+            // Enter animation
+            // const enterAnimation = new Html({
+            //     el: data.next.container,
+            //     duration: 500,
+            //     easing: easing.bezier(0.1, 0.7, 0.1, 0.9),
+            //     opacity: { 0: 1 },
+            //     x: { "-100": 0 },
+            // });
+            // return enterAnimation.play();
         }
     }]
 });

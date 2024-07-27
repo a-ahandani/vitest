@@ -15,9 +15,12 @@ const classes = styleSheet.classes;
 @customElement("wd-container")
 @withStyles(styleSheet)
 export class Container extends LitElement {
+
   render() {
     return html`
-      <div class=${classes.container}>
+      <div 
+      class=${classes.container}>
+        <wd-page-transition></wd-page-transition>
         <slot></slot>
       </div>
     `;

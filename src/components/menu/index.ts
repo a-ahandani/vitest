@@ -3,6 +3,7 @@ import { customElement, property } from "lit/decorators.js";
 import { useStyles } from "../../lib/helpers/jss";
 import { classMap } from "lit/directives/class-map.js";
 import { styles } from "./styles";
+import { menuSignal } from "./signals";
 
 @customElement("wd-menu")
 export class Menu extends LitElement {
@@ -11,8 +12,10 @@ export class Menu extends LitElement {
 
 
   handleClick() {
-    return () => {
-      this.active = !this.active;
+    this.active = !this.active;
+    menuSignal.value = {
+      ...menuSignal.value,
+      isMenuOpen: this.active
     };
   }
 
@@ -32,11 +35,11 @@ export class Menu extends LitElement {
       <div class="${classMap({ [classes.menuActive]: this.active })}">
         <wd-hamburger
           class="${classes.menuButton}"
-          @click=${this.handleClick()}
+          @click=${this.handleClick}
         >
         </wd-hamburger>
         <div class="${classes.menuList}">
-          <div class="${classes.menuBg}"></div>
+          <wd-animated-background ?active=${this.active}></wd-animated-background>
           <nav class="${classes.navigation}">
             <slot></slot>
           </nav>

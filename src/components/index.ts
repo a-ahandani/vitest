@@ -5,3 +5,5 @@ export { Button } from "./button";
 export { Icon } from "./icon";
 export { Hamburger } from "./hamburger";
 export { Noise } from "./noise";
+export { AnimatedBackground } from './animated-background'
+export { PageTransition } from './page-transition'

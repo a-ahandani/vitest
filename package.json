@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@barba/core": "^2.10.0",
+    "@lit-labs/preact-signals": "^1.0.2",
     "@mojs/core": "^1.7.1",
     "boxicons": "^2.1.4",
     "jss": "^10.10.0",

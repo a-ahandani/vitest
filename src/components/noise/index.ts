@@ -78,15 +78,6 @@ export class Noise extends LitElement {
     const camera = new PerspectiveCamera(59, 1, 0.3, 1000);
     camera.position.z = 5;
 
-
-
-
-
-
-
-
-
-
     // Post Processing
 
     const noiseEffect = new NoiseEffect({
@@ -100,7 +91,7 @@ export class Noise extends LitElement {
       ratio: 0.05,
     });
 
-    noiseEffect.blendMode.opacity.value = 0.2;
+    noiseEffect.blendMode.opacity.value = 0.8;
     noiseEffect.blendMode.blendFunction = BlendFunction.NORMAL;
 
     const renderPass = new RenderPass(scene, camera);

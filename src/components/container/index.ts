@@ -20,8 +20,9 @@ export class Container extends LitElement {
     return html`
       <div 
       class=${classes.container}>
-        <wd-page-transition></wd-page-transition>
-        <slot></slot>
+        <div class="container">
+            <slot></slot>
+        </div>
       </div>
     `;
   }

@@ -11,12 +11,14 @@ export class AnimatedBackground extends LitElement {
 
   render() {
     const { style, classes } = useStyles(styles());
-    return html`${style}
-      <div class="${classMap({
+
+    const classList = classMap({
       [classes.isActive]: this.active,
       [classes.animatedBackground]: true
-    })}">
-      </div> 
+    });
+
+    return html`${style}
+      <div class="${classList}"></div> 
     `;
   }
 
